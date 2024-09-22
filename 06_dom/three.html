@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kele aur Code</title>
+</head >
+<body style="background-color : black; color:white;">
+  
+</body>
+
+<script>
+  const div = document.createElement('div')
+  console.log(div)
+  div.className = 'main'
+  div.id = Math.round(Math.random() * 10 +1);
+  div.setAttribute("title", "generated title")
+  div.style.backgroundColor = 'green'
+  div.style.padding = '12px'
+  // for applying this style we need to attach it using innerText
+
+  // div.innerText = " Kela aur code"
+
+  // most preferable method is 
+  const addText = document.createTextNode('Kela aur Code')
+  div.appendChild(addText)
+
+// applied to the the page
+  document.body.appendChild(div)
+
+
+</script>
+</html>

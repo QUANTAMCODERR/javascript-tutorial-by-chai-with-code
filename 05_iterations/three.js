@@ -27,7 +27,7 @@ map.set ('FR', "France")
 map.set('IN', "India")
 map.set('IN', "India")
 
-// console.log(map)
+console.log(map)
 
 
 // we also iterate map function using of loop 

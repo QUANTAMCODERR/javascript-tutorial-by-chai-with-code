@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kela aur Code</title>
+</head>
+<body style="background-color: #212121; color:#fff;">
+
+  <ul class="language">
+    <li>Javascript</li>
+  </ul>
+  
+</body>
+<script>
+  // this is not optimised way ..
+  function addLanguage(langName){
+    const li = document.createElement('li')
+    li.innerHTML = `${langName}`
+    document.querySelector('.language').appendChild(li)
+  }
+  addLanguage("Python")
+  addLanguage("typeScript");
+  
+  //  lets see some optimised way ...
+  function addOptiLanguage(langName){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.language').appendChild(li)
+  }
+
+  addOptiLanguage('golang')
+  addOptiLanguage('Swift')
+
+
+  //Edit -- lets see how to edit some values
+
+  // first select the values
+ const secondLang =  document.querySelector('li:nth-child(2)');
+ // unoptimised way as we are using innerHTML it traverse from all the nodes .... 
+//  secondLang.innerHTML = 'Mojo';
+
+// optimised way using 
+
+// create element first
+const newli = document.createElement("li")
+// add textContent to newli we can also use appendchild does not have major difference
+
+newli.textContent = "Mojo"
+
+secondLang.replaceWith(newli)
+
+//Edit
+const firstlang = document.querySelector('li:first-child')
+firstlang.outerHTML = '<li>TypeScript</li>'
+
+//remove we used querySelector..
+const lastlang = document.querySelector('li:last-child')
+lastlang.remove()
+
+
+//dom finished
+
+
+
+</script>
+</html>
