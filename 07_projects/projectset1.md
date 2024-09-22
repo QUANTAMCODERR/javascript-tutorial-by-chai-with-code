@@ -3,9 +3,14 @@
 ## project link
 [Click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
 
+##myproject link
+[click here](https://stackblitz.com/edit/dom-project-chaiaurcode-jxak14?file=1-colorChanger%2Findex.html,1-colorChanger%2Fchaiaurcode.js)
+
 #solution code
 
 ## project 1 
+##myproject link
+[click here](https://stackblitz.com/edit/dom-project-chaiaurcode-jxak14?file=1-colorChanger%2Findex.html,1-colorChanger%2Fchaiaurcode.js)
 
 ''' javascript
 console.log("tushar")
