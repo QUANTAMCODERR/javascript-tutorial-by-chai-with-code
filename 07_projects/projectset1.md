@@ -3,16 +3,13 @@
 ## project link
 [Click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
 
-##myproject link
-[click here](https://stackblitz.com/edit/dom-project-chaiaurcode-jxak14?file=1-colorChanger%2Findex.html,1-colorChanger%2Fchaiaurcode.js)
-
-#solution code
 
 ## project 1 
-##myproject link
+## myproject link created by me
 [click here](https://stackblitz.com/edit/dom-project-chaiaurcode-jxak14?file=1-colorChanger%2Findex.html,1-colorChanger%2Fchaiaurcode.js)
 
-''' javascript
+# Solution Code
+``` javascript
 console.log("tushar")
 const buttons = document.querySelectorAll('.button');
 // console.log(buttons)
@@ -24,7 +21,7 @@ buttons.forEach(function (button) {
   button.addEventListener('click', function (e) {
     console.log(e);
     console.log(e.target);
-    console.log(e.target)
+    // console.log(e.target)
     if(e.target.id === 'grey'){
       body.style.backgroundColor = e.target.id;
     }
@@ -42,5 +39,5 @@ buttons.forEach(function (button) {
     }
     
   })
-});
-'''
+}); 
+```
