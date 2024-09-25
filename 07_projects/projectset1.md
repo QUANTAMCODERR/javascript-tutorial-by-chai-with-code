@@ -295,4 +295,4 @@ window.addEventListener('keydown', (e) => {
 4. **`${e.key === " " ? "space" : e.key}`**: This conditional checks if the pressed key is a space (`" "`). If true, it displays "space" in the table instead of an empty string.
 
 ### Important Note:
-- `e.keyCode` is deprecated and may not be supported in future versions of browsers. You should use `e.code` for better compatibility.
+- `e.keyCode` is deprecated and may not be supported in future versions of browsers. You should use `e.code` for better compatibility....
