@@ -244,3 +244,55 @@ document.querySelector('#stop').addEventListener('click', stopChangingColor);
    - When the "Stop" button is clicked, the `stopChangingColor` function is triggered to stop the color change.
 
 This code allows the background color of the webpage to change every second when the "Start" button is clicked and stops when the "Stop" button is clicked.
+
+
+
+
+## Project6-keyboard_Listener
+# SolutionCode
+
+
+```javascript
+const insert = document.getElementById('insert');
+
+// Listen for keydown events on the window
+window.addEventListener('keydown', (e) => {
+  // Update the innerHTML of the 'insert' element with key information
+  insert.innerHTML = `
+  <div class='color'>
+    <table>
+      <tr>
+        <th>Key</th>
+        <th>Keycode</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <!-- Display the key, and if it's a space, show "space" -->
+        <td>${e.key === " " ? "space" : e.key}</td>
+        <!-- Display the keycode of the key pressed -->
+        <td>${e.keyCode}</td>
+        <!-- Display the code of the key pressed -->
+        <td>${e.code}</td>
+      </tr>
+    </table>
+  </div>
+  `;
+});
+```
+
+### Explanation:
+1. **`insert` Variable**: This grabs the HTML element with the ID `insert`, where the dynamic content will be displayed.
+
+2. **`window.addEventListener('keydown', (e) => { ... })`**: This event listener waits for any keypress (keydown event) on the window. When a key is pressed, the function inside it executes, capturing the event object `e`.
+
+3. **`insert.innerHTML =`**: 
+   - Updates the content of the `insert` element using template literals (backticks ``).
+   - It creates a table with rows that display:
+     - **Key**: The key that was pressed. If the key is a space, it displays "space" instead of the actual space character.
+     - **Keycode**: Displays the numeric keycode of the pressed key (although note that `keyCode` is deprecated and `code` is preferred).
+     - **Code**: The physical key on the keyboard (like `KeyA`, `Space`, etc.).
+
+4. **`${e.key === " " ? "space" : e.key}`**: This conditional checks if the pressed key is a space (`" "`). If true, it displays "space" in the table instead of an empty string.
+
+### Important Note:
+- `e.keyCode` is deprecated and may not be supported in future versions of browsers. You should use `e.code` for better compatibility.
