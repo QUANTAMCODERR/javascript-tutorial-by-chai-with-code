@@ -182,3 +182,65 @@ function newGame(){
 
 
 ```
+
+
+## Project5-Unlimited_Color
+# SolutionCode
+
+```javascript
+const randomColor = function () {
+  const hex = '0123456789ABCDEF'; // Characters used in hex color codes
+  let color = '#'; // Initial '#' for hex color
+
+  // Generate a random hex color by looping 6 times (for 6 characters after '#')
+  for (let i = 0; i < 6; i++) {
+    // Append a random character from 'hex' to 'color'
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color; // Return the generated random color
+};
+
+let intervalId; // This variable will store the interval ID
+
+// Function to start changing the background color
+const startChangingColor = function () {
+  // Check if the interval is not already running
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000); // Call changeBgColor every second
+  }
+
+  // Function to change the background color to a random one
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor(); // Change background color
+  }
+};
+
+// Function to stop changing the background color
+const stopChangingColor = function () {
+  clearInterval(intervalId); // Stop the interval
+  intervalId = null; // Reset the interval ID to null
+};
+
+// Event listener to start changing the color when #start button is clicked
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+// Event listener to stop changing the color when #stop button is clicked
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+```
+
+### Explanation:
+1. **`randomColor` Function**: This function generates a random hex color code by randomly selecting 6 characters from the string `0123456789ABCDEF` and appending them to the `#` symbol to form a valid hex color.
+
+2. **`intervalId` Variable**: This is used to store the `setInterval` ID, which allows you to stop the interval later.
+
+3. **`startChangingColor` Function**: 
+   - If the interval is not already running (`!intervalId`), it starts calling `changeBgColor` every second (`1000` milliseconds).
+   - The `changeBgColor` function changes the background color of the page to a randomly generated one by calling `randomColor`.
+
+4. **`stopChangingColor` Function**: This clears the interval and stops the background color from changing by resetting the `intervalId` to `null`.
+
+5. **Event Listeners**: 
+   - When the "Start" button is clicked, the `startChangingColor` function is triggered.
+   - When the "Stop" button is clicked, the `stopChangingColor` function is triggered to stop the color change.
+
+This code allows the background color of the webpage to change every second when the "Start" button is clicked and stops when the "Stop" button is clicked.
